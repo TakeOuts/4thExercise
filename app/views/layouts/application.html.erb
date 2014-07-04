@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notebook</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='/assets/fullcalendar.css' rel='stylesheet' />
+  <link href='/assets/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src='/assets/moment.min.js'></script>
+  <script src='/assets/jquery.min.js'></script>
+  <script src='/assets/fullcalendar.min.js'></script>
+</head>
+<body>
+<div class="wrapper cf">
+    <header class="cf">
+      <div id="social-bar-holder">
+        <ul id="social-bar" class="cf">					
+          <li class="dribbble"><a href="#"  title="Dribbble" ></a></li>
+          <li class="facebook"><a href="#"  title="Facebook" ></a></li>
+          <li class="forrst"><a href="#"  title="forrst" ></a></li>
+          <li class="googleplus"><a href="#"  title="googleplus" ></a></li>
+          <li class="twitter"><a href="#"  title="twitter" ></a></li>
+        </ul>
+      </div>
+      <div class="cf"></div>
+      
+      <div id="logo" class="cf">
+        <a href="/" ><%= image_tag("logo.png") %></a>
+      </div>
+
+      <nav class="cf">
+        <ul id="nav" class="sf-menu">
+          <li class="current-menu-item"><a href="index.html"><span>HOME</span></a></li>
+          <li><a href="<%= url_for :action => 'new'%>"><span>Добавить</span></a></li>
+        </ul>
+        <div id="combo-holder"></div>
+      </nav>			
+    </header>
+    
+    <!-- MAIN -->
+    <div role="main" id="main" class="cf">
+      <%= yield %>      
+    </div>    
+    <footer>
+      <div id="twitter-holder">
+        <div class="ribbon-left"></div>
+        <div class="ribbon"></div>
+        <div class="ribbon-right"></div>
+      </div>
+    </footer>		
+</div>
+
+
+</body>
+</html>

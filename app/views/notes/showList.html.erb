@@ -1,0 +1,36 @@
+<!--Если были найдены элементы, удовлетворяющие критериям поиска, то выводим их.-->
+<% if @notes.count != 0 %>
+  <table class="flat-table flat-table-3">
+    <!--Шапка таблицы-->
+    <thead>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Priority</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <!--Поэлементно выводим найденные элементы-->
+      <% @notes.each do |note| %>    
+        <tr>
+          <td><%= note.title %></td>
+          <td><%= note.description %></td>
+          <td><%= date_field("note", "eventDate", value: note.eventDate.to_date) %></td>
+          <td><%= note.priority %></td>
+          <td><%= link_to 'Show', { action: "show", id: note.id } %></td>
+          <td><%= link_to 'Edit', { action: "edit", id: note.id } %></td>
+          <td><%= link_to 'Delete', { action: "destroy", id: note.id },
+                                    method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <!--Если элементы, удовлетворяющие критериям поиска, не были найдены, то выводим соответствующее сообщение-->
+  <% else %>
+    <%= "List of current events is empty" %>
+<% end %>
+
+  
+  

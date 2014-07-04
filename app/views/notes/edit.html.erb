@@ -1,0 +1,7 @@
+<div class="slider-wrapper theme-halftone">
+  <div class="headline">Изменение информации о "<%= @note.title %>"</div>
+    <div class="body-part">
+      <!--Поскольку edit очень похожа на страницу new, то будет использоваться механизм частичного представления (Partial) с помощью подключения файла _form,html.erb.-->
+      <%= render 'form' %>
+    </div>
+</div>

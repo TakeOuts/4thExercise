@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  eventDate: 2014-07-02 15:04:00
+  priority: 1
+
+two:
+  title: MyString
+  description: MyText
+  eventDate: 2014-07-02 15:04:00
+  priority: 1
