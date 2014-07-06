@@ -25,7 +25,7 @@ class NotesController < ApplicationController
   # Данный экшн создает выборку элементов за текущую дату
   # Представление для этого экшна расположено в app/views/notes/index.html.erb
   def index
-    @notes = Note.where(eventDate: Time.now.at_beginning_of_day ..(Time.now.at_beginning_of_day + 1.day))
+    @notes = Note.where(eventDate: Time.now.to_date..(Time.now.to_date+1))
   end
   
   # show отвечает за отображение данных элемента, id которого содержится в параметрах запроса
@@ -99,7 +99,7 @@ class NotesController < ApplicationController
     # Если запрос содержит параметр date, то осуществляем поиск по этому критерию
     unless params[:date].nil?
       selectedDate = Time.parse(params[:date])
-      @notes = Note.where(eventDate: selectedDate.at_beginning_of_day ..(selectedDate.at_beginning_of_day + 1.day))
+      @notes = Note.where(eventDate: selectedDate.to_date..(selectedDate.to_date+1))
     # В противном случае выводим все данные
     else
       @notes = Note.all
