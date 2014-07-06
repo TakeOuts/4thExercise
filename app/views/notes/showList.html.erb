@@ -3,13 +3,13 @@
   <table class="flat-table flat-table-3">
     <!--Шапка таблицы-->
     <thead>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Priority</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>Назв.</th>
+      <th>Описание</th>
+      <th>Дата</th>
+      <th id="sortBy">Приоритет</th>
+      <th>Показать</th>
+      <th>Изменить</th>
+      <th>Удалить</th>
     </thead>
     <tbody>
       <!--Поэлементно выводим найденные элементы-->
@@ -17,19 +17,19 @@
         <tr>
           <td><%= note.title %></td>
           <td><%= note.description %></td>
-          <td><%= date_field("note", "eventDate", value: note.eventDate.to_date) %></td>
+          <td><%= note.eventDate.to_date %></td>
           <td><%= note.priority %></td>
-          <td><%= link_to 'Show', { action: "show", id: note.id } %></td>
-          <td><%= link_to 'Edit', { action: "edit", id: note.id } %></td>
-          <td><%= link_to 'Delete', { action: "destroy", id: note.id },
+          <td><%= link_to 'Показать', { action: "show", id: note.id } %></td>
+          <td><%= link_to 'Изменить', { action: "edit", id: note.id } %></td>
+          <td><%= link_to 'Удалить', { action: "destroy", id: note.id },
                                     method: :delete, data: { confirm: "Are you sure?" } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <!--Если элементы, удовлетворяющие критериям поиска, не были найдены, то выводим соответствующее сообщение-->
-  <% else %>
-    <%= "List of current events is empty" %>
+<!--Если элементы, удовлетворяющие критериям поиска, не были найдены, то выводим соответствующее сообщение-->
+<% else %>
+  <%= "Список событий на выбранную дату пуст" %>
 <% end %>
 
   

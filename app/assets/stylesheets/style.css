@@ -24,15 +24,18 @@
   clear: both;
 }
 #calendar {
-            width: 900px;
-            margin: 40px auto;
-    }
-
-.body-part {
-  width: 400px;
-  margin: 25px;
+    width: 900px;
+    margin: 0px 40px 20px;
 }
 
+.body-part {
+  width: 960px;
+  text-align: center;
+}
+.slider-wrapper
+{
+   padding-left: 10px;
+}
 
 
 /* Buttons ------------------------------------------------------------ */

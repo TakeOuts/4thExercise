@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require ./moment.min.js
+//= require ./jquery.min.js
+//= require ./jquery-ui.custom.min.js
+//= require ./fullcalendar.min.js
+//= require ./ajax-table.js
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
